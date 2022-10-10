@@ -8,19 +8,19 @@ class Game {
   incrementPlayerWins() {
     //*********************************ADD CODE HERE *************************************/
     // Add 1 to the countOfPlayerWins property
-    this.countOfPlayerWins = countOfPlayerWins + 1;
+    this.countOfPlayerWins = this.countOfPlayerWins + 1;
   }
 
   incrementComputerWins() {
     //*********************************ADD CODE HERE *************************************/
     // Add 1 to the countOfComputerWins property
-    this.countOfComputerWins = countOfComputerWins + 1;
+    this.countOfComputerWins = this.countOfComputerWins + 1;
   }
 
   incrementCountOfTies() {
     //*********************************ADD CODE HERE *************************************/
     // Add 1 to the countOfTies property
-    this.countOfTies = countOfTies + 1;
+    this.countOfTies = this.countOfTies + 1;
   }
 
   setNumberOfRounds(numberOfRounds) {

@@ -42,7 +42,7 @@ function playGame() {
   alert(
     "The final scores are: \nPlayer wins: " +
       String(game.countOfPlayerWins) +
-      "\nComputer wins :" +
+      "\nComputer wins: " +
       String(game.countOfComputerWins) +
       "\nTies: " +
       String(game.countOfTies)
@@ -67,16 +67,16 @@ function playRound(roundNumber) {
   //*********************************ADD CODE HERE *************************************/
   // Display the Round Results from the properties stored in the Round object
 
-  alert("The outcome was: " + String(outcome));
-  switch (String(outcome)) {
+  alert("The outcome was: " + outcome);
+  switch (outcome) {
     case "tie":
-      game.incrementCountOfTies;
+      game.incrementCountOfTies();
       break;
     case "player":
-      game.incrementPlayerWins;
+      game.incrementPlayerWins();
       break;
     case "computer":
-      game.incrementComputerWins;
+      game.incrementComputerWins();
       break;
     default:
       alert("Something went wrong.");
@@ -91,7 +91,7 @@ function getPlayerSelection() {
   //*********************************ADD CODE HERE *************************************/
   // Prompt, Validate and Return the player selection. This must be in the form of "rock", "paper", or "scissors" exactly
 
-  var selection = prompt(
+  let selection = prompt(
     "Please enter rock, paper, or scissors exactly as shown."
   );
 
@@ -103,5 +103,17 @@ function getPlayerSelection() {
     selection = prompt(
       "Invalid selection. Please enter rock, paper, or scissors exactly as shown."
     );
+  }
+  
+  switch (selection) {
+    case "rock":
+      return Selections.ROCK;
+      break;
+    case "paper":
+      return Selections.PAPER;
+      break;
+    case "scissors":
+      return Selections.SCISSORS;
+      break;
   }
 }

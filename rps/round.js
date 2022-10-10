@@ -28,16 +28,19 @@ class Round {
     //*********************************ADD CODE HERE *************************************/
     // Use Math.floor and select a random Selections enumerator from above
     var toReturn = Math.floor(Math.random() * 3);
-    switch (toReturn){
-        case 0:
-            return Selections.ROCK;
-            break;
-        case 1:
-            return Selections.PAPER;
-            break;
-        case 2:
-            return Selections.SCISSORS;
-            break;
+    switch (toReturn) {
+      case 0:
+        alert("The computer threw " + String(Selections.ROCK) + ".");
+        return Selections.ROCK;
+        break;
+      case 1:
+        alert("The computer threw " + String(Selections.PAPER) + ".");
+        return Selections.PAPER;
+        break;
+      case 2:
+        alert("The computer threw " + String(Selections.SCISSORS) + ".");
+        return Selections.SCISSORS;
+        break;
     }
   }
 
@@ -50,24 +53,28 @@ class Round {
   determineWinner(playerSelection, computerSelection) {
     //*********************************ADD CODE HERE *************************************/
     // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
-    switch (this.playerSelection) {
-      case "rock":
-        if (this.computerSelection == "paper") return Outcomes.COMPUTER_WINS;
-        else if (this.computerSelection == "scissors") return Outcomes.PLAYER_WINS;
-        else return Outcomes.TIE;
-        break;
-      case "paper":
-        if (this.computerSelection == "scissors") return Outcomes.COMPUTER_WINS;
-        else if (this.computerSelection == "rock") return Outcomes.PLAYER_WINS;
-        else return Outcomes.TIE;
-        break;
-      case "scissors":
-        if (this.computerSelection == "rock") return Outcomes.COMPUTER_WINS;
-        else if (this.computerSelection == "paper") return Outcomes.PLAYER_WINS;
-        else return Outcomes.TIE;
-        break;
+
+    if (
+      (this.playerSelection == "rock" &&
+        this.computerSelection == "scissors") ||
+      (this.playerSelection == "scissors" &&
+        this.computerSelection == "paper") ||
+      (this.playerSelection == "paper" && this.computerSelection == "rock")
+    ) {
+      return Outcomes.PLAYER_WINS;
+    } else if (
+      (this.computerSelection == "rock" &&
+        this.playerSelection == "scissors") ||
+      (this.computerSelection == "scissors" &&
+        this.playerSelection == "paper") ||
+      (this.computerSelection == "paper" && this.playerSelection == "rock")
+    ) {
+      return Outcomes.COMPUTER_WINS;
+    } else {
+      return Outcomes.TIE;
     }
   }
 }
+
 //DO NOT TOUCH THIS LINE OF CODE//
 let unit_test1 = Round;
