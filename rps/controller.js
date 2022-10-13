@@ -11,7 +11,8 @@ function playGame() {
   // Get the number of rounds from the user, and store it in a variable called numberOfRounds.
   // Use game.IsNumerOfRoundsValid() to validate the user input.
   // If the input is valid, use game.setNumberOfRounds(numberOfRounds) to set the number of rounds for the game
-  //  >> Else, try to get the number of rounds for the suer again
+  //  >> Else, try to get the number of rounds for the user again
+  //This is a comment so I can force a commit on Git. The code works, I want the tests to run.
 
   var numberOfRounds = prompt(
     "Please enter the number of rounds you'd like to play from 1 to 5!"
